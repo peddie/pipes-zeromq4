@@ -23,7 +23,7 @@ install:
  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
  - travis_retry cabal update
  - cabal install -j3 --only-dependencies --enable-tests --enable-benchmarks -fexamples
- - cabal install -j3 hlint
+ # - cabal install -j3 hlint
 
 script:
   - if [ -f configure.ac ]; then autoreconf -i; fi
@@ -33,8 +33,8 @@ script:
   - cabal bench
   - cabal check
   - cabal sdist
-  - ./.cabal-sandbox/bin/hlint src --report
-  - ./.cabal-sandbox/bin/hlint examples --report
+  # - ${HOME}/.cabal/bin/hlint src --report
+  # - ${HOME}/.cabal/bin/hlint examples --report
   # The following scriptlet checks that the resulting source
   # distribution can be built & installed
   - export SRC_TGZ=$(cabal-1.18 info . | awk '{print $2 ".tar.gz";exit}') ;
