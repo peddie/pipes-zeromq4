@@ -33,6 +33,7 @@ script:
   - cabal bench
   - cabal check
   - cabal sdist
+  - cabal haddock
   - hlint src --report
   - hlint examples --report
   # The following scriptlet checks that the resulting source
