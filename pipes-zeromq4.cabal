@@ -1,7 +1,7 @@
 name:                pipes-zeromq4
 version:             0.1.0.0
 synopsis:            Pipes integration for ZeroMQ messaging
-homepage:            http://github.com/peddie/pipes-zeromq4
+homepage:            https://github.com/peddie/pipes-zeromq4
 license:             BSD3
 license-file:        LICENSE
 author:              Matthew Peddie <mpeddie@gmail.com>
@@ -32,6 +32,9 @@ library
   hs-source-dirs:      src
   default-language:    Haskell2010
 
+source-repository head
+  type:           git
+  location:       git://github.com/peddie/pipes-zeromq4
 
 flag examples
     description:    Build usage examples
