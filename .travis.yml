@@ -15,7 +15,7 @@ before_install:
  - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
  - travis_retry sudo add-apt-repository -y ppa:chris-lea/zeromq
  - travis_retry sudo apt-get update
- - travis_retry sudo apt-get install libzmq3 libzmq3-dev cabal-install-$CABALVER ghc-$GHCVER # see note about happy/alex
+ - travis_retry sudo apt-get install hlint libzmq3 libzmq3-dev cabal-install-$CABALVER ghc-$GHCVER # see note about happy/alex
  - export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
 
 install:
@@ -33,8 +33,8 @@ script:
   - cabal bench
   - cabal check
   - cabal sdist
-  # - ${HOME}/.cabal/bin/hlint src --report
-  # - ${HOME}/.cabal/bin/hlint examples --report
+  - hlint src --report
+  - hlint examples --report
   # The following scriptlet checks that the resulting source
   # distribution can be built & installed
   - export SRC_TGZ=$(cabal-1.18 info . | awk '{print $2 ".tar.gz";exit}') ;
