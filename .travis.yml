@@ -29,7 +29,7 @@ script:
   - cabal configure -fexamples --enable-tests --enable-benchmarks -v2
   - cabal build
   - cabal test
-  - cabal benchmark
+  - cabal bench
   - cabal check
   - cabal sdist
   - hlint src --report
