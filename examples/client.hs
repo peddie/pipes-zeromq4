@@ -19,6 +19,8 @@ get = mapM_ (\x -> do
                 liftIO $ threadDelay 1000000)
       ["1", "2", "3" :: B.ByteString]
 
+-- | Please run me concurrently with either of the 'server' or
+-- 'serverPipeline' programs.
 main :: IO ()
 main = Z.withContext $ \ctx ->
   runSafeT . runEffect $

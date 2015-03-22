@@ -20,6 +20,7 @@ echo bs@(b:moar) = do
   nxt <- respond (b :| moar)
   echo nxt
 
+-- | Please run me concurrently with the 'client' program.
 main :: IO ()
 main = Z.withContext $ \ctx ->
   runSafeT . runEffect $
