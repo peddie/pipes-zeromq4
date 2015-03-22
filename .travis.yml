@@ -23,7 +23,6 @@ install:
  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
  - travis_retry cabal update
  - cabal install -j3 --only-dependencies --enable-tests --enable-benchmarks -fexamples
- # - cabal install -j3 hlint
 
 script:
   - if [ -f configure.ac ]; then autoreconf -i; fi
