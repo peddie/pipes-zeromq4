@@ -105,7 +105,7 @@ setup ctx ty opts act =
 -- received on a socket downstream.
 --
 -- @
--- receiveMessage sock = forever $ liftIO (Z.receiveMulti sock) >>= yield
+-- receiveMessage sock = liftIO (Z.receiveMulti sock) >>= yield
 -- @
 receiveMessage :: (Z.Receiver sck, MonadIO m) =>
                Z.Socket sck -> Producer' [B.ByteString] m ()
@@ -238,7 +238,7 @@ clientLoop sock = forever $
                   request >>=
                   liftIO . Z.sendMulti sock
 
--- | Create a 'Client'' from the given ZeroMQ parameters.  The 'Client''
+-- | Create a 'Client' from the given ZeroMQ parameters.  The 'Client'
 -- passes all messages it receives on the ZMQ socket upstream with
 -- 'request' and sends all corresponding replies back out the socket.
 setupClient :: (MonadSafe m, Base m ~ IO,
@@ -270,7 +270,7 @@ serverLoop sock msg = liftIO (Z.sendMulti sock msg) >>
                       respond >>=
                       serverLoop sock
 
--- | Create a 'Server'' from the given ZeroMQ parameters.  The 'Server''
+-- | Create a 'Server' from the given ZeroMQ parameters.  The 'Server'
 -- sends all received requests out on the ZMQ socket and passes all
 -- messages it receives over the ZMQ socket back downstream with
 -- 'respond'.
