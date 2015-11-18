@@ -2,6 +2,7 @@ name:                pipes-zeromq4
 version:             0.2.0.0
 synopsis:            Pipes integration for ZeroMQ messaging
 homepage:            https://github.com/peddie/pipes-zeromq4
+bug-reports:         https://github.com/peddie/pipes-zeromq4/issues
 license:             BSD3
 license-file:        LICENSE
 author:              Matthew Peddie <mpeddie@gmail.com>
