@@ -57,7 +57,6 @@ executable proxy
                      , zeromq4-haskell >=0.6 && <0.7
                      , bytestring >= 0.10 && < 0.11
   ghc-options:         -O2 -rtsopts -threaded
-  ghc-prof-options:    -O2 -prof -fprof-auto -fprof-cafs -rtsopts -threaded
 
 executable client
   if flag(examples)
@@ -75,7 +74,6 @@ executable client
                      , bytestring >= 0.10 && < 0.11
                      , semigroups >=0.16 && <0.19
   ghc-options:         -O2 -rtsopts -threaded
-  ghc-prof-options:    -O2 -prof -fprof-auto -fprof-cafs -rtsopts -threaded
 
 executable server
   if flag(examples)
@@ -93,7 +91,6 @@ executable server
                      , bytestring >= 0.10 && < 0.11
                      , semigroups >=0.16 && <0.19
   ghc-options:         -O2 -rtsopts -threaded
-  ghc-prof-options:    -O2 -prof -fprof-auto -fprof-cafs -rtsopts -threaded
 
 executable serverPipeline
   if flag(examples)
@@ -111,4 +108,3 @@ executable serverPipeline
                      , bytestring >= 0.10 && < 0.11
                      , semigroups >=0.16 && <0.19
   ghc-options:         -O2 -rtsopts -threaded
-  ghc-prof-options:    -O2 -prof -fprof-auto -fprof-cafs -rtsopts -threaded
