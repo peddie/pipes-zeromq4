@@ -1,5 +1,5 @@
 name:                pipes-zeromq4
-version:             0.2.0.0
+version:             0.3.0.0
 synopsis:            Pipes integration for ZeroMQ messaging
 homepage:            https://github.com/peddie/pipes-zeromq4
 bug-reports:         https://github.com/peddie/pipes-zeromq4/issues
@@ -28,7 +28,7 @@ library
                      , zeromq4-haskell >=0.6 && <0.7
                      , bytestring >=0.10 && <0.11
                      , semigroups >=0.16 && <0.19
-                     , pipes >=4.1 && <4.2
+                     , pipes >=4.1 && <4.4
                      , pipes-safe >=2.2 && <2.3
   hs-source-dirs:      src
   default-language:    Haskell2010
